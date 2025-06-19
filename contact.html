@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KOMSYTE | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7fafc;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: url('banner.jpg') center/cover no-repeat;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(13, 42, 101, 0.65);
+      z-index: 0;
+    }
+
+    header h1 {
+      position: relative;
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      z-index: 1;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0.5rem;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #334155;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      position: relative;
+      padding-bottom: 0.3rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #2563eb;
+      outline: none;
+    }
+
+    nav a[aria-current="page"] {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    nav a[aria-current="page"]::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #2563eb;
+      border-radius: 3px;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 700px;
+      background: white;
+      margin: 3rem auto;
+      padding: 2.5rem 3rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    main h2 {
+      color: #2563eb;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    main p {
+      color: #475569;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #334155;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.8px solid #cbd5e1;
+      margin-bottom: 1.8rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+      outline: none;
+    }
+
+    button {
+      background-color: #2563eb;
+      color: white;
+      padding: 15px 38px;
+      border: none;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+      user-select: none;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #1d4ed8;
+      outline: none;
+    }
+
+    .contact-info {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: #64748b;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .contact-info a:hover,
+    .contact-info a:focus {
+      color: #1d4ed8;
+      outline: none;
+    }
+
+    footer {
+      background-color: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 200px;
+        padding: 0 1rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      main {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+      }
+
+      main h2 {
+        font-size: 1.7rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        margin: 0.5rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        height: 160px;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.08em;
+      }
+
+      main {
+        padding: 1.5rem 1.2rem;
+        margin: 1.5rem 1rem;
+      }
+
+      main h2 {
+        font-size: 1.5rem;
+      }
+
+      input,
+      textarea {
+        font-size: 0.95rem;
+        padding: 12px;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.8rem 0.5rem;
+      }
+
+      nav a {
+        margin: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>Contact KOMSYTE</h1>
+  </header>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Get in Touch</h2>
+    <p>
+      We would love to hear from you! Whether you have questions, ideas, or want to discuss a project, reach out using the form below.
+    </p>
+
+    <!-- ✅ WORKING FORM BELOW -->
+<form action="https://formsubmit.io/send/karanindrale253@gmail.com" method="POST">
+  <input name="_redirect" type="hidden" value="thank-you.html">
+  <input name="_formsubmit_id" type="text" style="display:none">
+
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+
+    <section class="contact-info" aria-label="Alternative contact information">
+      <p>📧 Email: <a href="mailto:karanindrale253@example.com">karan@example.com</a></p>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/karan-shivaji-indrale-82395533b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BH3UhdhOuS3iU0JRi%2FoPkHA%3D%3D" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+      <p>📱 WhatsApp: +91-XXXXXXXXXX</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2025 KOMSYTE. Built for smarter retail.
+  </footer>
+</body>
+</html>
