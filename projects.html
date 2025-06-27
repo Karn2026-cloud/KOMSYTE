@@ -48,7 +48,6 @@
       position: relative;
       font-size: 2.6rem;
       font-weight: 800;
-      letter-spacing: 1px;
       z-index: 1;
       padding: 0 1rem;
     }
@@ -142,6 +141,55 @@
       line-height: 1.6;
     }
 
+    .preview-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .preview-img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0 12px;
+      border-radius: 6px;
+    }
+
     footer {
       background-color: #0f172a;
       color: white;
@@ -152,7 +200,6 @@
       margin-top: auto;
     }
 
-    /* Tablet */
     @media (max-width: 768px) {
       header {
         height: 200px;
@@ -179,54 +226,28 @@
       }
     }
 
-    /* Mobile */
     @media (max-width: 480px) {
-      header {
-        height: 180px;
+      .preview-img {
+        max-width: 100%;
+      }
+
+      .lightbox img {
+        max-width: 90%;
       }
 
       header h1 {
         font-size: 1.6rem;
-        padding: 0 0.5rem;
-      }
-
-      nav {
-        padding: 0.8rem 0.3rem;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-        margin: 0.5rem 0.6rem;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-        padding-left: 8px;
-      }
-
-      .project-card {
-        padding: 1.2rem;
-        border-radius: 12px;
-      }
-
-      .project-card h3 {
-        font-size: 1.2rem;
-      }
-
-      .project-card p {
-        font-size: 0.95rem;
       }
 
       footer {
         font-size: 0.85rem;
-        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Banner Header -->
+  <!-- Header -->
   <header>
     <h1>Our Projects</h1>
   </header>
@@ -245,17 +266,38 @@
   <main>
     <h2>Case Studies</h2>
 
+    <!-- Amazon Project Card -->
     <div class="project-card">
       <h3>Amazon Sales Report</h3>
       <p>Built a dynamic Power BI dashboard analyzing sales performance, top categories, and regional insights to help Amazon sellers optimize strategy and boost conversions.</p>
+      <!-- Thumbnail Preview -->
+      <a href="#lightbox1">
+        <img src="amazon-sales-report.jpg" alt="Amazon Dashboard" class="preview-img" />
+      </a>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox1" class="lightbox">
+      <a href="#" class="lightbox-close">&times;</a>
+      <img src="amazon-sales-report.jpg" alt="Amazon Full Report" />
+    </div>
+
+    <!-- Students Project Card -->
     <div class="project-card">
       <h3>Students' Performance Analysis</h3>
       <p>Used Python and Excel to uncover patterns in mathematics scores across schools, identify learning gaps, and recommend improvement areas for curriculum designers.</p>
+  <!-- Thumbnail Preview -->
+      <a href="#lightbox2">
+      <img src="student-performance-dashboard.png" alt="Student Performance Dashboard" class="preview-img" />
+      </a>
+   </div>
+
+<!-- Lightbox Modal -->
+    <div id="lightbox2" class="lightbox">
+      <a href="#" class="lightbox-close">&times;</a>
+      <img src="student-performance-dashboard.png" alt="Student Performance Full" />
     </div>
 
-    <!-- Add more project cards as needed -->
   </main>
 
   <!-- Footer -->
