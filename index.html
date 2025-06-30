@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KOMSYTE | Retail Data Analytics</title>
+  <title>KOMSYTE | Retail Data Analytics Services for Business Growth</title>
+  <meta name="description" content="KOMSYTE helps retail businesses grow using data analytics, dashboards, and insights. Get smart, data-driven decisions today." />
+  <meta name="keywords" content="Retail Analytics, Data Insights, Power BI, Sales Forecasting, Customer Segmentation, KOMSYTE" />
+  <meta name="author" content="Karan - KOMSYTE" />
+  <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script type="text/javascript">
+    (function () {
+      var options = {
+        whatsapp: "+917666369172",
+        call_to_action: "Chat with KOMSYTE",
+        position: "right",
+      };
+      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+  </script>
   <style>
     :root {
       --primary-color: #1e3a8a;
@@ -55,6 +72,20 @@
       transform: scale(1.03);
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--dark);
+      padding: 10px 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1100;
+    }
+
     nav {
       background: var(--white);
       box-shadow: 0 2px 8px var(--shadow);
@@ -65,7 +96,6 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 15px 0;
-      user-select: none;
     }
 
     nav a {
@@ -91,13 +121,15 @@
     }
 
     nav a:hover,
-    nav a:focus {
+    nav a:focus,
+    nav a[aria-current="page"] {
       color: var(--primary-color);
-      outline: none;
+      font-weight: 700;
     }
 
     nav a:hover::after,
-    nav a:focus::after {
+    nav a:focus::after,
+    nav a[aria-current="page"]::after {
       width: 100%;
     }
 
@@ -106,8 +138,6 @@
       margin: 50px auto;
       padding: 0 20px;
       font-size: 1.125rem;
-      font-weight: 400;
-      color: #222;
     }
 
     .card-grid {
@@ -125,6 +155,8 @@
       transition: transform var(--transition);
       text-align: center;
       font-size: 1rem;
+      text-decoration: none;
+      color: var(--dark);
     }
 
     .card:hover {
@@ -153,7 +185,6 @@
       text-align: center;
       padding: 20px;
       font-weight: 500;
-      user-select: none;
       margin-top: auto;
     }
 
@@ -169,26 +200,35 @@
       padding-left: 20px;
     }
 
-    /* Mobile Responsive Enhancements */
-    @media (max-width: 768px) {
-      section {
-        font-size: 1rem;
-        margin: 30px auto;
-      }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      margin: 20px 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--primary-color);
+    }
 
-      .cta-button {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
       }
 
       nav {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       nav a {
-        font-size: 0.95rem;
-        margin: 8px;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 1rem;
       }
     }
 
@@ -204,24 +244,13 @@
       .card {
         font-size: 0.95rem;
       }
-
-      section h2 {
-        font-size: 1.25rem;
-      }
     }
   </style>
 </head>
-
 <body>
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
 
-  <header>
-    <img src="banner.jpg" alt="KOMSYTE Banner" />
-    <h1>Grow Your Retail Business with Data</h1>
-    <p>We turn your sales, customer, and performance data into meaningful growth strategies.</p>
-    <a href="contact.html" class="cta-button">Get a Free Consultation</a>
-  </header>
-
-  <nav>
+  <nav id="navbar">
     <a href="index.html" aria-current="page">Home</a>
     <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
@@ -230,19 +259,26 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <header>
+    <img src="banner.jpg" alt="KOMSYTE Banner" loading="lazy" />
+    <h1>Smarter Retail Growth Starts Here</h1>
+    <p><strong>From raw data to clear dashboards – let’s grow your business, one insight at a time.</strong></p>
+    <a href="contact.html" class="cta-button">Get a Free Consultation</a>
+  </header>
+
   <section>
     <h2>What We Do</h2>
     <p>KOMSYTE helps retail businesses grow by analyzing sales, customer behavior, and store performance using data. Our goal is to turn your raw data into smart business moves.</p>
   </section>
 
   <section>
-    <h2>Our Services</h2>
-    <div class="card-grid">
-      <div class="card">📊 Sales Forecasting</div>
-      <div class="card">🧠 Customer Segmentation</div>
-      <div class="card">📈 Power BI & Excel Dashboards</div>
-      <div class="card">🛒 Market Basket Analysis</div>
-    </div>
+    <h2>Recent Projects</h2>
+    <img src="amazon-sales-report.jpg" alt="Amazon Sales Dashboard by KOMSYTE" style="max-width:20%; border-radius:12px; margin-bottom:20px;" />
+    <ul>
+      <li><strong>Amazon Sales Dashboard</strong> – Visualized sales performance with KPIs</li>
+      <li><strong>Student Performance Dashboard</strong> – Analyzed learning trends using Power BI</li>
+    </ul>
+    <a href="projects.html" class="cta-button">See All Projects</a>
   </section>
 
   <section>
@@ -256,53 +292,49 @@
   </section>
 
   <section>
-    <h2>Recent Projects</h2>
-    <p>Here are some of our recent demo projects:</p>
-    <ul>
-      <li><strong>Amazon Sales Dashboard</strong> – Visualized sales performance with KPIs</li>
-      <li><strong>Student Performance Dashboard</strong> – Analyzed learning trends using Power BI</li>
-    </ul>
-    <a href="projects.html" class="cta-button">See All Projects</a>
+    <h2>Trusted By</h2>
+    <p>✔️ Local Grocery Store — Nashik<br>✔️ Fashion Boutique — Pune</p>
   </section>
 
   <section>
-    <h2>Insights & Tips</h2>
-    <p>Explore our blog for practical tips and strategies.</p>
+    <h2>Frequently Asked Questions</h2>
     <ul>
-      <li><a href="blog.html">Top Retail Trends for 2025</a></li>
-      <li><a href="blog.html">How RFM Analysis Boosted Sales by 22%</a></li>
+      <li><strong>What does KOMSYTE do?</strong> — We provide retail data analytics services like sales forecasting, dashboards, and insights.</li>
+      <li><strong>Who is it for?</strong> — Small and medium-sized retail stores in India.</li>
+      <li><strong>What tools do you use?</strong> — Power BI, Excel, and custom dashboards.</li>
+      <li><strong>Is there a free consultation?</strong> — Yes, we offer a free initial consultation.</li>
     </ul>
   </section>
 
   <section>
     <h2>Meet the Founder – Karan</h2>
-    <img src="Karan.jpg" alt="Founder Karan" class="profile-pic" />
-    <p>
-      Hello! I’m <strong>Karan</strong>, the founder of KOMSYTE. I'm passionate about helping retail businesses grow smarter with data.
-      I started KOMSYTE to bring affordable, insightful analytics to small and medium-sized businesses that often get left out of the data revolution.
-    </p>
-    <p>
-      My background is in data analytics, Power BI, and business strategy. I’ve worked on various demo projects that show how simple insights can drive real change.
-      I believe in creating clear, actionable dashboards and strategies that business owners can actually use — without needing to be data scientists.
-    </p>
-    <a href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" class="cta-button">Connect on LinkedIn</a>
+    <img src="Karan.jpg" alt="Founder Karan" class="profile-pic" loading="lazy" />
+    <p>Hello! I’m <strong>Karan</strong>, the founder of KOMSYTE. I'm passionate about helping retail businesses grow smarter with data.</p>
+    <p>I started KOMSYTE to bring affordable, insightful analytics to small and medium-sized businesses that often get left out of the data revolution.</p>
+    <a href="https://www.instagram.com/karn_2026" target="_blank" class="cta-button">Connect on Instagram</a>
   </section>
 
   <section>
-    <h2>Start Growing Today</h2>
-    <p>Want to understand your data and grow your business smarter? Let's talk.</p>
-    <a href="contact.html" class="cta-button">Contact KOMSYTE</a>
-  </section>
-
-  <section>
-    <h2>Connect With Us</h2>
-    <p>Ready to get started? Fill out our quick form and let’s explore how we can help your business.</p>
-    <a href="https://forms.gle/YOUR-FORM-LINK" target="_blank" class="cta-button">Fill the Intake Form</a>
+    <h2>Connect With KOMSYTE</h2>
+    <p>Contact us by email or chat on WhatsApp directly.</p>
+    <p><strong>Email:</strong> <a href="mailto:komsyte2026@gmail.com">komsyte2026@gmail.com</a><br>
+    <strong>WhatsApp:</strong> <a href="https://wa.me/917666369172" target="_blank">Chat with Us</a><br>
+    <strong>Instagram:</strong> <a href="https://instagram.com/komsyte" target="_blank">@komsyte</a><br>
+    <strong>Location:</strong> Nashik, India</p>
+    <a href="https://forms.gle/3a2UvsHxY28CV4bA6" target="_blank" class="cta-button">Fill the Intake Form</a>
   </section>
 
   <footer>
-    &copy; 2025 KOMSYTE — Built for Retail Growth.
+    &copy; 2025 KOMSYTE — Built for Retail Growth. <br>
+    <a href="https://instagram.com/komsyte" style="color:#ccc">Instagram</a>
   </footer>
 
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('navbar');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

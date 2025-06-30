@@ -6,36 +6,20 @@
   <title>Projects | KOMSYTE</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: #1e293b;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
     header {
       background: url('banner.jpg') center/cover no-repeat;
       height: 260px;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 1rem;
       position: relative;
       text-align: center;
       color: white;
     }
-
     header::before {
       content: '';
       position: absolute;
@@ -43,7 +27,10 @@
       background-color: rgba(13, 42, 101, 0.65);
       z-index: 0;
     }
-
+    header img {
+      height: 60px;
+      z-index: 1;
+    }
     header h1 {
       position: relative;
       font-size: 2.6rem;
@@ -51,7 +38,6 @@
       z-index: 1;
       padding: 0 1rem;
     }
-
     nav {
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -65,7 +51,6 @@
       top: 0;
       z-index: 1000;
     }
-
     nav a {
       color: #334155;
       text-decoration: none;
@@ -74,18 +59,11 @@
       padding-bottom: 0.3rem;
       transition: color 0.3s ease;
     }
-
-    nav a:hover,
-    nav a:focus {
-      color: #2563eb;
-      outline: none;
-    }
-
+    nav a:hover, nav a:focus { color: #2563eb; outline: none; }
     nav a[aria-current="page"] {
       color: #2563eb;
       font-weight: 700;
     }
-
     nav a[aria-current="page"]::after {
       content: '';
       position: absolute;
@@ -96,14 +74,12 @@
       background-color: #2563eb;
       border-radius: 3px;
     }
-
     main {
       flex-grow: 1;
       max-width: 1000px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
-
     h2 {
       color: #2563eb;
       font-size: 2rem;
@@ -113,7 +89,6 @@
       border-left: 5px solid #2563eb;
       padding-left: 12px;
     }
-
     .project-card {
       background-color: #ffffff;
       border-radius: 16px;
@@ -122,25 +97,21 @@
       margin-bottom: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .project-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
     }
-
     .project-card h3 {
       margin-top: 0;
       color: #1e293b;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
-
     .project-card p {
       color: #475569;
       font-size: 1.05rem;
       line-height: 1.6;
     }
-
     .preview-img {
       width: 100%;
       max-width: 300px;
@@ -149,12 +120,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
-    .preview-img:hover {
-      transform: scale(1.02);
-    }
-
-    /* Lightbox Styles */
+    .preview-img:hover { transform: scale(1.02); }
     .lightbox {
       display: none;
       position: fixed;
@@ -167,17 +133,12 @@
       justify-content: center;
       align-items: center;
     }
-
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 12px;
     }
-
-    .lightbox:target {
-      display: flex;
-    }
-
+    .lightbox:target { display: flex; }
     .lightbox-close {
       position: absolute;
       top: 20px;
@@ -189,7 +150,6 @@
       padding: 0 12px;
       border-radius: 6px;
     }
-
     footer {
       background-color: #0f172a;
       color: white;
@@ -199,56 +159,22 @@
       font-weight: 500;
       margin-top: auto;
     }
-
     @media (max-width: 768px) {
-      header {
-        height: 200px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      .project-card {
-        padding: 1.4rem;
-      }
-
-      .project-card h3 {
-        font-size: 1.3rem;
-      }
-
-      .project-card p {
-        font-size: 1rem;
-      }
+      header { height: 200px; flex-direction: column; }
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
     }
-
     @media (max-width: 480px) {
-      .preview-img {
-        max-width: 100%;
-      }
-
-      .lightbox img {
-        max-width: 90%;
-      }
-
-      header h1 {
-        font-size: 1.6rem;
-      }
-
-      footer {
-        font-size: 0.85rem;
-      }
+      .preview-img { max-width: 100%; }
+      header h1 { font-size: 1.6rem; }
+      footer { font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
+    <img src="logo.jpg" alt="KOMSYTE Logo" />
     <h1>Our Projects</h1>
   </header>
 
@@ -266,44 +192,41 @@
   <main>
     <h2>Case Studies</h2>
 
-    <!-- Amazon Project Card -->
     <div class="project-card">
       <h3>Amazon Sales Report</h3>
       <p>Built a dynamic Power BI dashboard analyzing sales performance, top categories, and regional insights to help Amazon sellers optimize strategy and boost conversions.</p>
-      <!-- Thumbnail Preview -->
+      <p><strong>Tools Used:</strong> Power BI, Excel</p>
       <a href="#lightbox1">
         <img src="amazon-sales-report.jpg" alt="Amazon Dashboard" class="preview-img" />
       </a>
     </div>
-
-    <!-- Lightbox Modal -->
     <div id="lightbox1" class="lightbox">
       <a href="#" class="lightbox-close">&times;</a>
       <img src="amazon-sales-report.jpg" alt="Amazon Full Report" />
     </div>
 
-    <!-- Students Project Card -->
     <div class="project-card">
       <h3>Students' Performance Analysis</h3>
       <p>Used Python and Excel to uncover patterns in mathematics scores across schools, identify learning gaps, and recommend improvement areas for curriculum designers.</p>
-  <!-- Thumbnail Preview -->
+      <p><strong>Tools Used:</strong> Python (Pandas), Excel</p>
       <a href="#lightbox2">
-      <img src="student-performance-dashboard.png" alt="Student Performance Dashboard" class="preview-img" />
+        <img src="student-performance-dashboard.png" alt="Student Performance Dashboard" class="preview-img" />
       </a>
-   </div>
-
-<!-- Lightbox Modal -->
+    </div>
     <div id="lightbox2" class="lightbox">
       <a href="#" class="lightbox-close">&times;</a>
       <img src="student-performance-dashboard.png" alt="Student Performance Full" />
     </div>
 
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="contact.html" style="display:inline-block; background:#2563eb; color:#fff; padding:12px 28px; border-radius:10px; text-decoration:none; font-weight:600;">Start Your Project</a>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 KOMSYTE | Empowering Retail with Smart Data
+    &copy; 2025 KOMSYTE | Empowering Retail with Smart Data<br>
+    <a href="https://www.instagram.com/komsyte" target="_blank" style="color: #93c5fd; text-decoration: none;">📷 @komsyte</a>
   </footer>
-
 </body>
 </html>
